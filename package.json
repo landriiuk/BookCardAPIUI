@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open:bookcard": "npx cypress open --env environmentName=bookcard",
+    "cy:open:petStore": "npx cypress open --env environmentName=petstore",
+    "cy:run:petStore": "npx cypress run --env environmentName=petstore",
+    "cy:petstore:report": "npm run cy:run:petStore --reporter mochawesome"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.5.1",
+    "cypress-plugin-api": "^2.11.1",
     "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "mochawesome": "^7.1.3"
   }
 }

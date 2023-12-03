@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://petstore.swagger.io/v2",
+    "specPattern": "cypress/e2e/petStore/*.cy.js",
+    "env": {
+        "test":"some variable"
+    }
+}

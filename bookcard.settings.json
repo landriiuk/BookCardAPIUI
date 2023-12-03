@@ -1,0 +1,8 @@
+{
+    "baseUrl": "https://bookcart.azurewebsites.net",
+    "specPattern": "cypress/e2e/bookCard/*.cy.js",
+    
+    "env": {
+        "test":"some variable"
+    }
+}
