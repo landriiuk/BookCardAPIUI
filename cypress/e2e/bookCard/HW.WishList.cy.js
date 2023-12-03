@@ -33,4 +33,29 @@ describe('Wishlist spec', () => {
             expect(response.status).to.eq(200);
         });
     })
+
+    it('Get all Assigned', () => {
+        cy.api(`/api/Wishlist/${Cypress.env('userId')}`).then((response) => {
+            cy.log(response.body)
+
+            expect(response.body).not.to.empty;
+
+        });
+    });
+
+    it('Delete all assigned', () => {
+        cy.api({
+            method: 'Delete',
+            url: `/api/Wishlist/${Cypress.env('userId')}`,
+            headers: {
+                'accept': 'text/plain',
+                'Authorization': 'Bearer ' + Cypress.env('token'),
+            },
+        }).then((response) => {
+            cy.log(response.body)
+
+            expect(response.status).to.eq(200);
+        })
+    })
+
 })
