@@ -1,7 +1,3 @@
-/// <reference types="cypress" />
-// export let token;
-// export let userId;
-
 export function loginViaAPI() {
 
     cy.request({
@@ -28,37 +24,37 @@ export function loginViaAPI() {
     //         }
     //     });
     // }
-    cy.wrap(Cypress.env('userId'))
+    // cy.wrap(Cypress.env('userId'))
 
-    cy.wrap(Cypress.env('token'))
+    // cy.wrap(Cypress.env('token'))
 
-    // export function getAuth() {
-    cy.request({
+    // // export function getAuth() {
+    // cy.request({
         
-        method: "POST",
-        url: `/api/CheckOut/${Cypress.env('userId')}`,
-        body: {
-            "orderId": "string",
-            "orderDetails": [
-                {
-                    "book": {
-                        "bookId": 0,
-                        "title": "string",
-                        "author": "string",
-                        "category": "string",
-                        "price": 0,
-                        "coverFileName": "string"
-                    },
-                    "quantity": 0
-                }
-            ],
-            "cartTotal": 0,
-            "orderDate": "2023-11-30T19:03:10.366Z"
-        },
-        headers: {
-            accept: "text/plain",
-            Authorization: `Bearer ${Cypress.env('token')}`
-        }
+    //     method: "POST",
+    //     url: `/api/CheckOut/${Cypress.env('userId')}`,
+    //     body: {
+    //         "orderId": "string",
+    //         "orderDetails": [
+    //             {
+    //                 "book": {
+    //                     "bookId": 0,
+    //                     "title": "string",
+    //                     "author": "string",
+    //                     "category": "string",
+    //                     "price": 0,
+    //                     "coverFileName": "string"
+    //                 },
+    //                 "quantity": 0
+    //             }
+    //         ],
+    //         "cartTotal": 0,
+    //         "orderDate": "2023-11-30T19:03:10.366Z"
+    //     },
+    //     headers: {
+    //         accept: "text/plain",
+    //         Authorization: `Bearer ${Cypress.env('token')}`
+    //     }
 
-    })
+    // })
 }

@@ -1,9 +1,12 @@
 const { defineConfig } = require("cypress");
 require('dotenv').config();
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = defineConfig({
   e2e: {
+    experimentalWebKitSupport: true,
     setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber())
       const environmentName = config.env.environmentName || 'bookCard'
       const environmentFilename = `./${environmentName}.settings.json`
       console.log('loading %s', environmentFilename)
