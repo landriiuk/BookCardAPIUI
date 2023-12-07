@@ -7,14 +7,14 @@ module.exports = defineConfig({
     experimentalWebKitSupport: true,
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
-      const environmentName = config.env.environmentName || 'bookCard'
+      const environmentName = config.env.environmentName || 'bookCart'
       const environmentFilename = `./${environmentName}.settings.json`
       console.log('loading %s', environmentFilename)
       const settings = require(environmentFilename)
       if (settings.baseUrl) {
         config.baseUrl = settings.baseUrl
       }
-      if(settings.specPattern){
+      if (settings.specPattern) {
         config.specPattern = settings.specPattern
       }
       if (settings.env) {
@@ -31,12 +31,13 @@ module.exports = defineConfig({
       username: process.env.USERNAME,
       password: process.env.PASSWORD
     },
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/results',
-    overwrite: false,
-    html: true,
-    json: true,
-  },
+    // projectId: "9cxh5i",
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/results',
+      overwrite: false,
+      html: true,
+      json: true,
+    },
   },
 });
