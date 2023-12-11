@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cy:open:bookcart": "npx cypress open --env environmentName=bookcart",
-    "cy:run:bookcart": "npx cypress run --env environmentName=bookcart --browser firefox",
+    "cy:run:bookcart": "npx cypress run --env environmentName=bookcart --browser chrome",
     "cy:open:petStore": "npx cypress open --env environmentName=petstore",
     "cy:run:petStore": "npx cypress run --env environmentName=petstore",
     "cy:petstore:report": "npm run cy:run:petStore --reporter mochawesome",
