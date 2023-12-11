@@ -1,3 +1,6 @@
+env: 
+    CYPRESS_ID: ${{secrets.CYPRESS_ID}}
+
 name: Run on push to master BookCart Cypress via browser container
 on: 
     workflow_dispatch:
@@ -13,6 +16,8 @@ jobs:
     container:
         image: cypress/browsers:node-18.15.0-chrome-106.0.5249.61-1-ff-99.0.1-edge-114.0.1823.51-1
     steps:
+    - name: Export env variables
+      run: export CYPRESS_ID = ${{secrets.CYPRESS_ID}}
     - name: Get repository code
       uses: actions/checkout@v4
     - name: Install dependencies
