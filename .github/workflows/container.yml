@@ -3,7 +3,9 @@ on:
     workflow_dispatch:
     push:
         branches:
-            - main 
+            - main
+    pull_request:
+        types: [opened, assigned, reopened]
 jobs:
   testing:
     runs-on: ubuntu-latest
