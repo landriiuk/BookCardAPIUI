@@ -9,4 +9,4 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run the tests 
-      run: npm run cy:open:bookcart
+      run: npm run cy:run:bookcart
