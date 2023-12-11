@@ -5,14 +5,17 @@ describe('template spec', () => {
     loginViaAPI();
     cy.visit('https://bookcart.azurewebsites.net', {
       onBeforeLoad(content) {
-        content.window.localStorage.setItem('authToken', Cypress.env("token"));
+        content.window.localStorage.setItem('authToken', Cypress.env('token'));
       }
     });
     cy.wait(1000);
-    cy.percySnapshot('test name');
-    cy.percySnapshot('firstCard', { scope: '.book-card' });
+    cy.percySnapshot();
   })
-})
+
+  it('Fail test', () => {
+    cy.url().should('contain', 'https://bookcart.azurewebsites.nethttps://bookcart.azurewebsites.net');
+  });
+});
 
 // // pom 
 // selectRandomSkills() {

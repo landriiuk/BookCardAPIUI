@@ -14,7 +14,7 @@ module.exports = defineConfig({
       if (settings.baseUrl) {
         config.baseUrl = settings.baseUrl
       }
-      if(settings.specPattern){
+      if (settings.specPattern) {
         config.specPattern = settings.specPattern
       }
       if (settings.env) {
@@ -31,12 +31,13 @@ module.exports = defineConfig({
       username: process.env.USERNAME,
       password: process.env.PASSWORD
     },
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/results',
-    overwrite: false,
-    html: true,
-    json: true,
-  },
+    // projectId: "9cxh5i",
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/results',
+      overwrite: false,
+      html: true,
+      json: true,
+    },
   },
 });

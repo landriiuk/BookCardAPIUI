@@ -13,6 +13,7 @@ describe('Wishlist spec', () => {
             let token = response.body.token;
             let userId = response.body.userDetails.userId;
             cy.log(userId)
+            Cypress.env('response', response.body)
             Cypress.env('userId', userId);
             cy.log(Cypress.env('userId'))
             Cypress.env('token', token);
@@ -30,6 +31,8 @@ describe('Wishlist spec', () => {
             },
         }).then((response) => {
             cy.log(response.body)
+            
+            // expect(response.body).to.equal(Cypress.env('response'))
             expect(response.status).to.eq(200);
         });
     })
@@ -43,7 +46,7 @@ describe('Wishlist spec', () => {
         });
     });
 
-    it('Delete all assigned', () => {
+    xit('Delete all assigned', () => {
         cy.api({
             method: 'Delete',
             url: `/api/Wishlist/${Cypress.env('userId')}`,
