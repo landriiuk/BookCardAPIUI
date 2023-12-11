@@ -5,12 +5,18 @@
   "main": "index.js",
   "scripts": {
     "cy:open:bookcart": "npx cypress open --env environmentName=bookcart",
-    "cy:run:bookcart": "npx cypress run --env environmentName=bookcart --browser chrome",
+    "cy:run:bookcart": "npm run generate:report && npx cypress run --env environmentName=bookcart --browser chrome",
     "cy:open:petStore": "npx cypress open --env environmentName=petstore",
     "cy:run:petStore": "npx cypress run --env environmentName=petstore",
     "cy:petstore:report": "npm run cy:run:petStore --reporter mochawesome",
     "cy:cucumber:bookcart": "npx cypress open --env environmentName=bookcartCu",
-    "cy:percy": "npx percy exec -- cypress run"
+    "cy:percy": "npx percy exec -- cypress run",
+    "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
+    
+    "delete:reports": "rimraf cypress/results/* || true",
+    "delete:merged": "rimraf mochawesome.json || true",
+    "delete:html": "rimraf mochawesome-report || true",
+    "prereport": "npm run delete:reports ; npm run delete:merged && npm run delete:html"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +31,8 @@
     "@percy/cypress": "^3.1.2",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
     "playwright-webkit": "1.34"
   },
   "cypress-cucumber-preprocessor": {
