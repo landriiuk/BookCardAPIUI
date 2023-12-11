@@ -1,4 +1,4 @@
-name: Trigger BookCart Cypress tests
+name: Trigger BookCart Cypress tests v1
 on: workflow_dispatch
 jobs:
   testing:
@@ -9,4 +9,4 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run the tests 
-      run: npm run cy:open:bookcart
+      run: npm run cy:run:bookcart
