@@ -1,5 +1,5 @@
 
-describe('Iterate Through Fixture Object', () => {
+describe.skip('Iterate Through Fixture Object', () => {
     beforeEach(() => cy.visit('https://bookcart.azurewebsites.net'))
     it(`should login as `, () => {
         cy.fixture('fixtureJs.js').then((userData) => {

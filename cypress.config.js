@@ -7,7 +7,7 @@ module.exports = defineConfig({
     experimentalWebKitSupport: true,
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
-      const environmentName = config.env.environmentName || 'bookCard'
+      const environmentName = config.env.environmentName || 'bookCart'
       const environmentFilename = `./${environmentName}.settings.json`
       console.log('loading %s', environmentFilename)
       const settings = require(environmentFilename)
