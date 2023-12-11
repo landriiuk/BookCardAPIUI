@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - main
+            - qa/test
     pull_request:
         types: [opened, assigned, reopened]
 jobs:
