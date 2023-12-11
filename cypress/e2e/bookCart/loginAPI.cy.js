@@ -11,7 +11,6 @@ describe('template spec', () => {
     cy.wait(1000);
     cy.percySnapshot('test name');
     cy.percySnapshot('firstCard', { scope: '.book-card' });
-    
   })
 })
 

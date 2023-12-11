@@ -1,4 +1,4 @@
-describe.skip('Wishlist spec', () => {
+describe('Wishlist spec', () => {
     let productId = 2;
 
     before(() => {
