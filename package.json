@@ -12,7 +12,6 @@
     "cy:cucumber:bookcart": "npx cypress open --env environmentName=bookcartCu",
     "cy:percy": "npx percy exec -- cypress run",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    
     "delete:reports": "rimraf cypress/results/* || true",
     "delete:merged": "rimraf mochawesome.json || true",
     "delete:html": "rimraf mochawesome-report || true",
@@ -22,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.5.1",
+    "cypress-mongodb": "^6.2.0",
     "cypress-plugin-api": "^2.11.1",
     "dotenv": "^16.3.1"
   },

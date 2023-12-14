@@ -1,0 +1,12 @@
+{
+    "baseUrl": "http://5.189.186.217",
+    "specPattern": "cypress/e2e/newBorn/*.cy.js",
+    "env": {
+        "email": "andriukluba@gmail.com",
+        "password": "1234567890",
+        "mongodb": {
+            "uri": "mongodb://testUser:qwerty12345@5.189.186.217:27017/?authMechanism=DEFAULT",
+            "database": "admin"
+        }
+    }
+}
